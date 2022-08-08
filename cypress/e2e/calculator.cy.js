@@ -91,6 +91,13 @@ describe("Calculator", () => {
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', '2')
   })
+  it('negative numbers should display correctly', () => {
+    cy.get('#number1').click();
+    cy.get('#operator-subtract').click()
+    cy.get('#number7').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '-6')
+  })
 
   it('dividing by 0 should display error', () => {
     cy.get('#number1').click();
